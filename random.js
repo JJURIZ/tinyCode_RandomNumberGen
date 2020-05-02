@@ -31,6 +31,7 @@ clearButton.addEventListener("click", function(){
 
 
 //Next steps:
+//Validation (require at least 1 for # of die, 3 for number of sides)
 //Track number of rolls.
 //Record number of rolls above each result.
 //Re-roll button which rolls the specified dice and replaces the last result. 
