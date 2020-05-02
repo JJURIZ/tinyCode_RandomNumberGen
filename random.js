@@ -1,15 +1,10 @@
-let firstNumberInput = document.getElementById("first_number_input"),
-    firstNumberButton = document.getElementById("first_number_button"),
-    secondNumberInput = document.getElementById("second_number_input"),
-    secondNumberButton = document.getElementById("second_number_button"),
+let numberOfDiceInput = document.getElementById("number_of_dice"),
+    rollButton = document.getElementById("roll_button"),
+    numberOfSidesInput = document.getElementById("number_of_sides"),
     displayNumbers = document.getElementById("display_numbers");
 
-firstNumberButton.addEventListener("click", function () {
-    let number = firstNumberInput.value; 
-    displayNumbers.innerHTML += getRandomNumber(1, number) + "<br>";
-});
-
-let getRandomNumber = function getRandomNumber(min, max){
+//Generates a random number
+let getRandomNumber = function getRandomNumber(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     randy = Math.random();
@@ -17,15 +12,14 @@ let getRandomNumber = function getRandomNumber(min, max){
     return Math.floor(randy * (max - min + 1) + min)
 };
 
+//Rolls the number of dice for the number of sides. 
+rollButton.addEventListener("click", function () {
+    let numDice = numberOfDiceInput.value;
+    let dieSides = numberOfSidesInput.value;
+    for (let i = 0; i < numDice; i++) {
+        if (i < numDice) {
+            displayNumbers.innerHTML += getRandomNumber(1, dieSides) + "<br>";
+        }
+    }
+});
 
-//Enter number of dice
-//Enter number of sides of dice
-
-//Roll the dice
-
-//When rolled generate a random number no less than 1 and no higher than the # of sides of the dice.
-//Generate a total based on the number of dice rolled. 
-
-//Display the individual dice rolls and their total. 
-
-//Loop through the random number generator equal to the number of dice rolled. 
