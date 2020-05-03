@@ -2,3 +2,11 @@ body {
     background-color: azure;
     font-family: 'Jost', sans-serif;
 }
+
+input:invalid {
+    background-color: pink;
+}
+
+input:valid {
+    background-color: white;
+}

@@ -3,7 +3,7 @@ let numberOfDiceInput = document.getElementById("number_of_dice"),
     numberOfSidesInput = document.getElementById("number_of_sides"),
     displayNumbers = document.getElementById("display_numbers"),
     clearButton = document.getElementById("clear_button"),
-    numberOfRolls = 0;
+    numberOfRolls = 1;
 
 //Generates a random number
 let getRandomNumber = function getRandomNumber(min, max) {
@@ -18,11 +18,13 @@ let getRandomNumber = function getRandomNumber(min, max) {
 rollButton.addEventListener("click", function () {
     let numDice = numberOfDiceInput.value;
     let dieSides = numberOfSidesInput.value;
+    displayNumbers.innerHTML += `This is roll #${numberOfRolls}.<br>`
     for (let i = 0; i < numDice; i++) {
         if (i < numDice) {
             displayNumbers.innerHTML += `The #${i + 1} die is ${getRandomNumber(1, dieSides)} <br>`;
         }
     }
+    numberOfRolls++;
 });
 
 clearButton.addEventListener("click", function(){
@@ -30,8 +32,9 @@ clearButton.addEventListener("click", function(){
 })
 
 
+
 //Next steps:
-//Validation (require at least 1 for # of die, 3 for number of sides)
+//Validation (require at least 1 for # of die, 3 for number of sides)-DONE
 //Track number of rolls.
 //Record number of rolls above each result.
 //Re-roll button which rolls the specified dice and replaces the last result. 
